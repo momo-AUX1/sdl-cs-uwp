@@ -1,0 +1,1 @@
+C:\Users\Naalf\source\repos\xbox-uwp-sdl2-starter\xbox-uwp-sdl2-starter\xbox-uwp-sdl2-starter.csproj;x64
