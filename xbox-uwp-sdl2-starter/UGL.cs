@@ -11,10 +11,9 @@ namespace xbox_uwp_sdl2_starter
     /// It handles window events (using the CoreWindow), the render loop, gamepad button checking,
     /// and exposes common GL functions.
     /// 
-    /// Version 1.1 adds:
-    /// - A hint mechanism (UGL_SetHint) so that if "UGL_WINRT_HANDLE_BACK_BUTTON" is set to "1",
-    ///   a back button handler is installed.
-    /// - SDL_GetWindow() and SDL_GL_GetContext() to return the current window handle and GL context.
+    /// Version 1.2 adds:
+    /// - InitializeNativeExportsForModule(string moduleName) to load a native module and set up UGL exports.
+    /// - SDL_WINDOW_FULLSCREEN support.
     /// </summary>
     public static class UGL
     {
@@ -49,6 +48,7 @@ namespace xbox_uwp_sdl2_starter
         {
             SDL_WINDOW_OPENGL = 0x00000002,
             SDL_WINDOW_SHOWN = 0x00000004,
+            SDL_WINDOW_FULLSCREEN = 0x00000008
         }
 
         [Flags]
@@ -63,6 +63,10 @@ namespace xbox_uwp_sdl2_starter
             R1,
             L2,
             R2,
+            DPadUp,
+            DPadDown,
+            DPadLeft,
+            DPadRight
         }
 
         #endregion
@@ -130,6 +134,13 @@ namespace xbox_uwp_sdl2_starter
                 throw new Exception("Could not retrieve CoreWindow. Make sure you're on the UI thread.");
             }
 
+            if (flags.HasFlag(WindowFlags.SDL_WINDOW_FULLSCREEN))
+            {
+                var view = Windows.UI.ViewManagement.ApplicationView.GetForCurrentView();
+                view.TryEnterFullScreenMode();
+                //Debug.WriteLine(view.IsFullScreenMode);
+            }
+
             try
             {
                 // UWP does not allow setting Window.Title, so this is commented out.
@@ -145,7 +156,7 @@ namespace xbox_uwp_sdl2_starter
             {
                 try
                 {
-                    Windows.UI.Core.SystemNavigationManager.GetForCurrentView().BackRequested += App_BackRequested;
+                    SystemNavigationManager.GetForCurrentView().BackRequested += App_BackRequested;
                 }
                 catch (Exception ex)
                 {
@@ -265,10 +276,19 @@ namespace xbox_uwp_sdl2_starter
                     return reading.LeftTrigger > 0.5;
                 case Buttons.R2:
                     return reading.RightTrigger > 0.5;
+                case Buttons.DPadUp:
+                    return reading.Buttons.HasFlag(GamepadButtons.DPadUp);
+                case Buttons.DPadDown:
+                    return reading.Buttons.HasFlag(GamepadButtons.DPadDown);
+                case Buttons.DPadLeft:
+                    return reading.Buttons.HasFlag(GamepadButtons.DPadLeft);
+                case Buttons.DPadRight:
+                    return reading.Buttons.HasFlag(GamepadButtons.DPadRight);
                 default:
                     return false;
             }
         }
+
 
         private static void SetupGamepadEvents()
         {
@@ -434,6 +454,95 @@ namespace xbox_uwp_sdl2_starter
         public static void Viewport(int x, int y, int width, int height)
         {
             GLES.glViewport(x, y, width, height);
+        }
+
+        #endregion
+
+        #region External / UGL.h / UGL.cpp support
+
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+        public delegate void PollEventsDelegate();
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+        public delegate int GetButtonDelegate(int button);
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+        public delegate IntPtr GetContextDelegate();
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+        public delegate int MainLoopDelegate(RenderCallbackDelegate renderCallback);
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+        public delegate int RenderCallbackDelegate();
+
+        public static void PollEventsWrapper()
+        {
+            SDL_PollEvents();
+        }
+
+        public static int GetButtonWrapper(int button)
+        {
+            return GetButton((Buttons)button) ? 1 : 0;
+        }
+
+        public static IntPtr GetContextWrapper()
+        {
+            return SDL_GL_GetContext();
+        }
+
+        public static int MainLoopWrapper(RenderCallbackDelegate renderCallback)
+        {
+            Action action = () => { renderCallback(); };
+            SDL_MainLoop(action);
+            return 0;
+        }
+
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+        public delegate void SetFunctionPointersDelegate(
+            PollEventsDelegate pollEvents,
+            GetButtonDelegate getButton,
+            GetContextDelegate getContext,
+            MainLoopDelegate mainLoop);
+
+
+        private static class NativeMethods32
+        {
+            [DllImport("kernel32.dll", SetLastError = true, CharSet = CharSet.Ansi)]
+            public static extern IntPtr LoadLibrary(string lpFileName);
+
+            [DllImport("kernel32.dll", SetLastError = true, CharSet = CharSet.Ansi)]
+            public static extern IntPtr GetProcAddress(IntPtr hModule, string procName);
+        }
+
+        /// <summary>
+        /// This method is generic. It loads the native module with the given name,
+        /// looks for the exported UGL_SetFunctionPointers, and if found, calls it
+        /// passing our managed wrapper delegates.
+        /// </summary>
+        /// <param name="moduleName">The name of the native DLL (e.g. "snake_angle.dll")</param>
+        public static void InitializeNativeExportsForModule(string moduleName)
+        {
+            IntPtr moduleHandle = NativeMethods32.LoadLibrary(moduleName);
+            if (moduleHandle == IntPtr.Zero)
+            {
+                Debug.WriteLine("Failed to load module: " + moduleName);
+                return;
+            }
+
+            IntPtr procAddress = NativeMethods32.GetProcAddress(moduleHandle, "UGL_SetFunctionPointers");
+            if (procAddress == IntPtr.Zero)
+            {
+                Debug.WriteLine("Module " + moduleName + " does not export UGL_SetFunctionPointers.");
+                return;
+            }
+
+            SetFunctionPointersDelegate setFP = (SetFunctionPointersDelegate)Marshal.GetDelegateForFunctionPointer(
+                procAddress, typeof(SetFunctionPointersDelegate));
+
+            setFP(
+                new PollEventsDelegate(PollEventsWrapper),
+                new GetButtonDelegate(GetButtonWrapper),
+                new GetContextDelegate(GetContextWrapper),
+                new MainLoopDelegate(MainLoopWrapper)
+            );
+
+            Debug.WriteLine("Registered UGL exports for module: " + moduleName);
         }
 
         #endregion

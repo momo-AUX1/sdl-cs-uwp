@@ -8,7 +8,7 @@
 
   <Identity
     Name="71f50e34-3987-40e4-bb65-a171b6a442f5"
-    Publisher="CN=danwo"
+    Publisher="CN=Naalf"
     Version="1.0.0.0" />
 
   <mp:PhoneIdentity PhoneProductId="71f50e34-3987-40e4-bb65-a171b6a442f5" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
