@@ -11,9 +11,9 @@ namespace xbox_uwp_sdl2_starter
     /// It handles window events (using the CoreWindow), the render loop, gamepad button checking,
     /// and exposes common GL functions.
     /// 
-    /// Version 1.2 adds:
-    /// - InitializeNativeExportsForModule(string moduleName) to load a native module and set up UGL exports.
-    /// - SDL_WINDOW_FULLSCREEN support.
+    /// Version 1.3 adds:
+    /// - GetGamingDevice() and the Device enums to know what console are we currently in
+    /// - SDL_GamepadVibrate() to control the gamepad vibration
     /// </summary>
     public static class UGL
     {
@@ -326,6 +326,21 @@ namespace xbox_uwp_sdl2_starter
             }
         }
 
+        public static void SDL_GamepadVibrate(double leftMotor, double rightMotor, double leftTrigger = 0, double rightTrigger = 0)
+        {
+            if (_activeGamepad != null)
+            {
+                var vibration = new GamepadVibration()
+                {
+                    LeftMotor = leftMotor,
+                    RightMotor = rightMotor,
+                    LeftTrigger = leftTrigger,
+                    RightTrigger = rightTrigger
+                };
+                _activeGamepad.Vibration = vibration;
+            }
+        }
+
         #endregion
 
         #region EGL / GL Setup Internals
@@ -470,6 +485,8 @@ namespace xbox_uwp_sdl2_starter
         public delegate int MainLoopDelegate(RenderCallbackDelegate renderCallback);
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
         public delegate int RenderCallbackDelegate();
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+        public delegate void GamepadVibrateDelegate(double leftMotor, double rightMotor, double leftTrigger, double rightTrigger);
 
         public static void PollEventsWrapper()
         {
@@ -493,12 +510,18 @@ namespace xbox_uwp_sdl2_starter
             return 0;
         }
 
+        public static void GamepadVibrateWrapper(double leftMotor, double rightMotor, double leftTrigger, double rightTrigger)
+        {
+            SDL_GamepadVibrate(leftMotor, rightMotor, leftTrigger, rightTrigger);
+        }
+
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
         public delegate void SetFunctionPointersDelegate(
             PollEventsDelegate pollEvents,
             GetButtonDelegate getButton,
             GetContextDelegate getContext,
-            MainLoopDelegate mainLoop);
+            MainLoopDelegate mainLoop,
+            GamepadVibrateDelegate gamepadVibrate);
 
 
         private static class NativeMethods32
@@ -539,12 +562,58 @@ namespace xbox_uwp_sdl2_starter
                 new PollEventsDelegate(PollEventsWrapper),
                 new GetButtonDelegate(GetButtonWrapper),
                 new GetContextDelegate(GetContextWrapper),
-                new MainLoopDelegate(MainLoopWrapper)
+                new MainLoopDelegate(MainLoopWrapper),
+                 new GamepadVibrateDelegate(GamepadVibrateWrapper)
             );
 
             Debug.WriteLine("Registered UGL exports for module: " + moduleName);
         }
 
+        #endregion
+
+        #region Gaming Device Information
+        public static class Device
+        {
+            public const uint NONE = 0;
+            public const uint XBOX_ONE = 0x768BAE26;
+            public const uint XBOX_ONE_S = 0x2A7361D9;
+            public const uint XBOX_ONE_X = 0x5AD617C7;
+            public const uint XBOX_ONE_X_DEVKIT = 0x10F7CDE3;
+            public const uint XBOX_SERIES_S = 0x1D27FABB;
+            public const uint XBOX_SERIES_X = 0x2F7A3DFF;
+            public const uint XBOX_SERIES_X_DEVKIT = 0xDE8A5661;
+        }
+
+        [StructLayout(LayoutKind.Sequential)]
+        public struct GAMING_DEVICE_MODEL_INFORMATION
+        {
+            public uint vendorId;
+            public uint deviceId;
+        }
+
+        [DllImport("api-ms-win-gaming-deviceinformation-l1-1-0.dll", EntryPoint = "GetGamingDeviceModelInformation")]
+        private static extern int GetGamingDeviceModelInformation(ref GAMING_DEVICE_MODEL_INFORMATION info);
+
+        public static uint GetGamingDevice()
+        {
+            GAMING_DEVICE_MODEL_INFORMATION info = new GAMING_DEVICE_MODEL_INFORMATION();
+            try
+            {
+                int hr = GetGamingDeviceModelInformation(ref info);
+                if (hr != 0)
+                {
+                    Debug.WriteLine("Failed to retrieve gaming device information. HRESULT: " + hr);
+                    return Device.NONE;
+                }
+
+                return info.deviceId;
+            }
+            catch (DllNotFoundException ex)
+            {
+                Debug.WriteLine("DLL not found: " + ex.Message);
+                return Device.NONE;
+            }
+        }
         #endregion
     }
 }

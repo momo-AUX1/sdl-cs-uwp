@@ -3,11 +3,7 @@
   "WorkspaceRootPath": "C:\\Users\\Naalf\\Downloads\\New folder\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3F55A54D-85E2-4121-9B21-7CAA5F81CE39}|xbox-uwp-sdl2-starter\\xbox-uwp-sdl2-starter.csproj|C:\\Users\\Naalf\\Downloads\\New folder\\xbox-uwp-sdl2-starter\\helloworldscene.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3F55A54D-85E2-4121-9B21-7CAA5F81CE39}|xbox-uwp-sdl2-starter\\xbox-uwp-sdl2-starter.csproj|solutionrelative:xbox-uwp-sdl2-starter\\helloworldscene.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3F55A54D-85E2-4121-9B21-7CAA5F81CE39}|xbox-uwp-sdl2-starter\\xbox-uwp-sdl2-starter.csproj|C:\\Users\\Naalf\\Downloads\\New folder\\xbox-uwp-sdl2-starter\\helloworldsceneangle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{3F55A54D-85E2-4121-9B21-7CAA5F81CE39}|xbox-uwp-sdl2-starter\\xbox-uwp-sdl2-starter.csproj|c:\\users\\naalf\\downloads\\new folder\\xbox-uwp-sdl2-starter\\helloworldsceneangle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3F55A54D-85E2-4121-9B21-7CAA5F81CE39}|xbox-uwp-sdl2-starter\\xbox-uwp-sdl2-starter.csproj|solutionrelative:xbox-uwp-sdl2-starter\\helloworldsceneangle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -15,7 +11,7 @@
       "RelativeMoniker": "D:0:0:{3F55A54D-85E2-4121-9B21-7CAA5F81CE39}|xbox-uwp-sdl2-starter\\xbox-uwp-sdl2-starter.csproj|solutionrelative:xbox-uwp-sdl2-starter\\ProgramANGLE.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3F55A54D-85E2-4121-9B21-7CAA5F81CE39}|xbox-uwp-sdl2-starter\\xbox-uwp-sdl2-starter.csproj|c:\\users\\naalf\\downloads\\new folder\\xbox-uwp-sdl2-starter\\ugl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{3F55A54D-85E2-4121-9B21-7CAA5F81CE39}|xbox-uwp-sdl2-starter\\xbox-uwp-sdl2-starter.csproj|C:\\Users\\Naalf\\Downloads\\New folder\\xbox-uwp-sdl2-starter\\ugl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3F55A54D-85E2-4121-9B21-7CAA5F81CE39}|xbox-uwp-sdl2-starter\\xbox-uwp-sdl2-starter.csproj|solutionrelative:xbox-uwp-sdl2-starter\\ugl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -23,16 +19,20 @@
       "RelativeMoniker": "D:0:0:{3F55A54D-85E2-4121-9B21-7CAA5F81CE39}|xbox-uwp-sdl2-starter\\xbox-uwp-sdl2-starter.csproj|solutionrelative:xbox-uwp-sdl2-starter\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3F55A54D-85E2-4121-9B21-7CAA5F81CE39}|xbox-uwp-sdl2-starter\\xbox-uwp-sdl2-starter.csproj|C:\\Users\\Naalf\\Downloads\\New folder\\xbox-uwp-sdl2-starter\\gl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3F55A54D-85E2-4121-9B21-7CAA5F81CE39}|xbox-uwp-sdl2-starter\\xbox-uwp-sdl2-starter.csproj|solutionrelative:xbox-uwp-sdl2-starter\\gl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3F55A54D-85E2-4121-9B21-7CAA5F81CE39}|xbox-uwp-sdl2-starter\\xbox-uwp-sdl2-starter.csproj|C:\\Users\\Naalf\\Downloads\\New folder\\xbox-uwp-sdl2-starter\\EGL.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3F55A54D-85E2-4121-9B21-7CAA5F81CE39}|xbox-uwp-sdl2-starter\\xbox-uwp-sdl2-starter.csproj|solutionrelative:xbox-uwp-sdl2-starter\\EGL.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3F55A54D-85E2-4121-9B21-7CAA5F81CE39}|xbox-uwp-sdl2-starter\\xbox-uwp-sdl2-starter.csproj|C:\\Users\\Naalf\\Downloads\\New folder\\xbox-uwp-sdl2-starter\\helloworldscene.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3F55A54D-85E2-4121-9B21-7CAA5F81CE39}|xbox-uwp-sdl2-starter\\xbox-uwp-sdl2-starter.csproj|solutionrelative:xbox-uwp-sdl2-starter\\helloworldscene.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3F55A54D-85E2-4121-9B21-7CAA5F81CE39}|xbox-uwp-sdl2-starter\\xbox-uwp-sdl2-starter.csproj|C:\\Users\\Naalf\\Downloads\\New folder\\xbox-uwp-sdl2-starter\\GLES.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3F55A54D-85E2-4121-9B21-7CAA5F81CE39}|xbox-uwp-sdl2-starter\\xbox-uwp-sdl2-starter.csproj|solutionrelative:xbox-uwp-sdl2-starter\\GLES.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3F55A54D-85E2-4121-9B21-7CAA5F81CE39}|xbox-uwp-sdl2-starter\\xbox-uwp-sdl2-starter.csproj|C:\\Users\\Naalf\\Downloads\\New folder\\xbox-uwp-sdl2-starter\\EGL.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3F55A54D-85E2-4121-9B21-7CAA5F81CE39}|xbox-uwp-sdl2-starter\\xbox-uwp-sdl2-starter.csproj|solutionrelative:xbox-uwp-sdl2-starter\\EGL.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3F55A54D-85E2-4121-9B21-7CAA5F81CE39}|xbox-uwp-sdl2-starter\\xbox-uwp-sdl2-starter.csproj|C:\\Users\\Naalf\\Downloads\\New folder\\xbox-uwp-sdl2-starter\\gl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3F55A54D-85E2-4121-9B21-7CAA5F81CE39}|xbox-uwp-sdl2-starter\\xbox-uwp-sdl2-starter.csproj|solutionrelative:xbox-uwp-sdl2-starter\\gl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,56 +42,55 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "HelloWorldSceneANGLE.cs",
               "DocumentMoniker": "C:\\Users\\Naalf\\Downloads\\New folder\\xbox-uwp-sdl2-starter\\HelloWorldSceneANGLE.cs",
               "RelativeDocumentMoniker": "xbox-uwp-sdl2-starter\\HelloWorldSceneANGLE.cs",
               "ToolTip": "C:\\Users\\Naalf\\Downloads\\New folder\\xbox-uwp-sdl2-starter\\HelloWorldSceneANGLE.cs",
               "RelativeToolTip": "xbox-uwp-sdl2-starter\\HelloWorldSceneANGLE.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAGUAAAAAAAAAAAAmwHMAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-05T21:33:10.527Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 5,
               "Title": "HelloWorldScene.cs",
               "DocumentMoniker": "C:\\Users\\Naalf\\Downloads\\New folder\\xbox-uwp-sdl2-starter\\HelloWorldScene.cs",
               "RelativeDocumentMoniker": "xbox-uwp-sdl2-starter\\HelloWorldScene.cs",
               "ToolTip": "C:\\Users\\Naalf\\Downloads\\New folder\\xbox-uwp-sdl2-starter\\HelloWorldScene.cs",
               "RelativeToolTip": "xbox-uwp-sdl2-starter\\HelloWorldScene.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAARAAAAAAAAAA==",
+              "ViewState": "AgIAAFUAAAAAAAAAAAAuwHgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-05T21:33:03.831Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "GL.cs",
               "DocumentMoniker": "C:\\Users\\Naalf\\Downloads\\New folder\\xbox-uwp-sdl2-starter\\GL.cs",
               "RelativeDocumentMoniker": "xbox-uwp-sdl2-starter\\GL.cs",
               "ToolTip": "C:\\Users\\Naalf\\Downloads\\New folder\\xbox-uwp-sdl2-starter\\GL.cs",
               "RelativeToolTip": "xbox-uwp-sdl2-starter\\GL.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAJIAAAAAAAAAAAAuwLUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-05T21:32:49.606Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-05T21:32:49.606Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "ProgramANGLE.cs",
               "DocumentMoniker": "C:\\Users\\Naalf\\Downloads\\New folder\\xbox-uwp-sdl2-starter\\ProgramANGLE.cs",
               "RelativeDocumentMoniker": "xbox-uwp-sdl2-starter\\ProgramANGLE.cs",
               "ToolTip": "C:\\Users\\Naalf\\Downloads\\New folder\\xbox-uwp-sdl2-starter\\ProgramANGLE.cs",
               "RelativeToolTip": "xbox-uwp-sdl2-starter\\ProgramANGLE.cs",
-              "ViewState": "AgIAADIAAAAAAAAAAAAiwEEAAAAbAAAAAAAAAA==",
+              "ViewState": "AgIAAEAAAAAAAAAAAAAcwFMAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-05T21:08:57.847Z",
               "EditorCaption": ""
@@ -104,46 +103,46 @@
               "RelativeDocumentMoniker": "xbox-uwp-sdl2-starter\\GLES.cs",
               "ToolTip": "C:\\Users\\Naalf\\Downloads\\New folder\\xbox-uwp-sdl2-starter\\GLES.cs",
               "RelativeToolTip": "xbox-uwp-sdl2-starter\\GLES.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAIUAAAAAAAAAAAAAwKgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-05T18:59:22.279Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 4,
               "Title": "EGL.cs",
               "DocumentMoniker": "C:\\Users\\Naalf\\Downloads\\New folder\\xbox-uwp-sdl2-starter\\EGL.cs",
               "RelativeDocumentMoniker": "xbox-uwp-sdl2-starter\\EGL.cs",
               "ToolTip": "C:\\Users\\Naalf\\Downloads\\New folder\\xbox-uwp-sdl2-starter\\EGL.cs",
               "RelativeToolTip": "xbox-uwp-sdl2-starter\\EGL.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEkAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAAAEkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-05T19:03:42.157Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "UGL.cs",
               "DocumentMoniker": "C:\\Users\\Naalf\\Downloads\\New folder\\xbox-uwp-sdl2-starter\\UGL.cs",
               "RelativeDocumentMoniker": "xbox-uwp-sdl2-starter\\UGL.cs",
               "ToolTip": "C:\\Users\\Naalf\\Downloads\\New folder\\xbox-uwp-sdl2-starter\\UGL.cs",
               "RelativeToolTip": "xbox-uwp-sdl2-starter\\UGL.cs",
-              "ViewState": "AgIAAD0AAAAAAAAAAAAYwDYBAAAoAAAAAAAAAA==",
+              "ViewState": "AgIAABIBAAAAAAAAAAAIwIMAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-05T18:59:30.51Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\Naalf\\Downloads\\New folder\\xbox-uwp-sdl2-starter\\Program.cs",
               "RelativeDocumentMoniker": "xbox-uwp-sdl2-starter\\Program.cs",
               "ToolTip": "C:\\Users\\Naalf\\Downloads\\New folder\\xbox-uwp-sdl2-starter\\Program.cs",
               "RelativeToolTip": "xbox-uwp-sdl2-starter\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEsAAAAcAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-05T18:58:19.25Z",
               "EditorCaption": ""
